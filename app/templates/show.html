@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card" style="width: 20rem;"> 
+    <img src="{{ post.image_url }}" alt="{{ post.title }}">
+    <div class="card-body">
+<h1 class="card-title">{{ post.title }}</h1>
+<p class="card-text">{{ post.description }}</p>
+
+<a href="{{ url_for('posts.landing') }}" class="btn btn-primary">Back to Posts</a>
+<a href="{{ url_for('posts.edit', id=post.id) }}" class="btn btn-warning">Edit</a>
+<form action="{{ url_for('posts.delete', id=post.id) }}" method="POST" style="display:inline;">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+</div>
+</div>
+{% endblock %}

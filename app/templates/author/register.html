@@ -1,0 +1,24 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <label for="username">{{ form.username.label.text }}</label>
+        {{ form.username(class="form-control", id="username") }}
+    </div>
+    <div class="form-group">
+        <label for="email">{{form.email.label.text }}</label>
+        {{ form.email(class="form-control", id="email") }}
+    </div>
+    <div class="form-group">
+        <label for="password">{{ form.password.label.text }}</label>
+        {{ form.password(class="form-control", id="password") }}
+    </div>
+    <div class="form-group">
+        <label for="confirm_password">{{form.confirm_password.label.text }}</label>
+        {{ form.confirm_password(class="form-control", id="confirm_password") }}</div>
+
+    <!-- <div><input type="submit" value="Register" class="btn btn-primary"></div> -->
+    <a href="{{ url_for('posts.landing') }}" class="btn btn-primary">Register</a>
+
+</form>
